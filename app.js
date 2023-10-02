@@ -89,8 +89,6 @@ window.addEventListener("load", loadImages);
 window.addEventListener("load", fetchBreeds);
 loadImagesButton.addEventListener("click", loadImages);
 
-// ... Your existing JavaScript ...
-
 // Fetch and display images for selected breeds
 async function loadImages() {
     const imageGrid = document.getElementById("image-grid");
@@ -154,5 +152,3 @@ async function loadImages() {
 
 // Call the loadImages function when the page loads
 window.addEventListener("load", loadImages);
-
-// ... Your existing event listeners ...
