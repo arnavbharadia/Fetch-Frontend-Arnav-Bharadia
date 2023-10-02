@@ -1,21 +1,49 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #db5959;
     color: #333;
 }
 
+header {
+    background-color: #b050c6;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .breed-selector {
-    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 #breed-select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 #load-images {
@@ -23,31 +51,100 @@ h1 {
     background-color: #007BFF;
     color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.row {
+#load-images:hover {
+    background-color: #0056b3;
+}
+
+.image-gallery {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 4px;
-  }
-  
-  /* Create two equal columns that sits next to each other */
-  .column {
-    flex: 50%;
-    padding: 0 4px;
-  }
-  
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-  }
+    justify-content: space-between;
+}
 
 .img-container {
-    width: 200px;
+    width: calc(33.33% - 20px);
     margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 img {
     max-width: 100%;
+    display: block;
+    transition: transform 0.2s ease-in-out;
 }
+
+.img-container:hover img {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    .img-container {
+        width: calc(50% - 20px);
+    }
+}
+/* Updated styles for the image grid */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.img-container {
+    flex-basis: calc(33.33% - 20px); /* Calculate column width with spacing */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.img-container:hover img {
+    transform: scale(1.1);
+}
+
+/* ... Your existing CSS ... */
+
+/* Updated styles for the image grid using a masonry layout */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 20px; /* Horizontal gap between columns */
+}
+
+.img-container {
+    width: 100%; /* Full width for variable width columns */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%; /* Full width for variable width columns */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.img-container:hover img {
+    transform: scale(1.1);
+}
+
